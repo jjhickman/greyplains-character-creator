@@ -1,29 +1,21 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
-const Navbar = () => {
+
+const Navbar = (props) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h7" component="div" sx={{ flexGrow: 1 }}>
-            Character
-          </Typography>
-          <Typography variant="h7" component="div" sx={{ flexGrow: 1 }}>
-            Abilities
-          </Typography>
-          <Typography variant="h7" component="div" sx={{ flexGrow: 1 }}>
-            Skills
-          </Typography>
-          <Typography variant="h7" component="div" sx={{ flexGrow: 1 }}>
-            Features
-          </Typography>
-          <Typography variant="h7" component="div" sx={{ flexGrow: 1 }}>
-            Results
-          </Typography>
+          <Link to="/">Character</Link>
+          <Link to="/abilities">Abilities</Link>
+          <Link to="/skills">Skills</Link>
+          <Link to="/features">Features</Link>
+          <Link to="/results">Results</Link>
         </Toolbar>
       </AppBar>
     </Box>

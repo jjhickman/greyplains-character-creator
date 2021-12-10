@@ -1,5 +1,5 @@
 {
-  "name": "electron-react-boilerplate",
+  "name": "greyplains-character-creator",
   "description": "Electron application boilerplate based on React, React Router, Webpack, React Fast Refresh for rapid application development",
   "scripts": {
     "build": "concurrently \"npm run build:main\" \"npm run build:renderer\"",
@@ -30,8 +30,8 @@
     ]
   },
   "build": {
-    "productName": "ElectronReact",
-    "appId": "org.erb.ElectronReact",
+    "productName": "GreyplainsCharacterCreator",
+    "appId": "org.erb.GreyplainsCharacterCreator",
     "asar": true,
     "asarUnpack": "**\\*.{node,dll}",
     "files": [
