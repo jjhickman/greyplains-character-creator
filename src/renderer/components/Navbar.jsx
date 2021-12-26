@@ -11,7 +11,7 @@ const Navbar = (props) => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <Link to="/">Character</Link>
+          <Link to="/character">Character</Link>
           <Link to="/abilities">Abilities</Link>
           <Link to="/skills">Skills</Link>
           <Link to="/features">Features</Link>
