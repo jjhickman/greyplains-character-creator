@@ -12,37 +12,43 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-const Home = () => {
-  const [edition, setEdition] = React.useState('');
+import sidebar from '../Greyplains_Sidebar.jpg';
 
-  const handleEditionChange = (event) => {
-    setEdition(event.target.value);
+const Home = () => {
+  const [module, setModule] = React.useState('');
+
+  const handleModuleChange = (event) => {
+    setModule(event.target.value);
   };
 
   return (
     <div>
-      <Box sx={{ minWidth: 275 }}>
-        <Card>
-          <CardContent>
-            <Grid>
-              <FormControl fullWidth>
-                <InputLabel id="demo-simple-select-label">Edition</InputLabel>
-                <Select
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={edition}
-                  label="Edition"
-                  onChange={handleEditionChange}
-                >
-                  <MenuItem value="Original">Original</MenuItem>
-                </Select>
-              </FormControl>
-              <Link to="/character">
-                <Button variant="contained">Start</Button>
-              </Link>
-            </Grid>
-          </CardContent>
-        </Card>
+      <Box sx={{ width: '100%' }}>
+        <Grid container columnSpacing={5}>
+          <Grid item xs={6}>
+            <FormControl fullWidth>
+              <InputLabel id="demo-simple-select-label">Module</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={module}
+                label="Module"
+                onChange={handleModuleChange}
+              >
+                <MenuItem value="Original">Original</MenuItem>
+              </Select>
+            </FormControl>
+            <hr/>
+            <Link to="/character">
+              <Button variant="contained" style={{ backgroundColor: '#111' }}>
+                Start
+              </Button>
+            </Link>
+          </Grid>
+          <Grid item xs={6}>
+            <img alt="sidebar" src={sidebar} height={550} />
+          </Grid>
+        </Grid>
       </Box>
     </div>
   );

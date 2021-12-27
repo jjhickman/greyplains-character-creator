@@ -1,13 +1,14 @@
 import { Link, MemoryRouter as Router, Switch, Route } from 'react-router-dom';
+import Grid from '@mui/material/Grid';
 
 import Navbar from './components/Navbar';
-
 import Home from './pages/Home';
 import Character from './pages/Character';
 import Abilities from './pages/Abilities';
 import Skills from './pages/Skills';
 import Features from './pages/Features';
 import Results from './pages/Results';
+import icon from './Greyplains_Icon.png';
 import './App.css';
 
 const routes = [
@@ -37,12 +38,16 @@ export default function App() {
   return (
     <Router>
       <div>
-        <div>
-          <Link to="/">
-            <img src="./Greyplains_Icon.png" alt="Greyplains" />
-          </Link>
-          <h1>Greyplains Character Creator</h1>
-        </div>
+        <Grid container>
+          <Grid item>
+            <Link to="/">
+              <img src={icon} alt="Greyplains" width={100} />
+            </Link>
+          </Grid>
+          <Grid item>
+            <h1>Greyplains Character Creator</h1>
+          </Grid>
+        </Grid>
         <Switch>
           <Route path="/" exact component={Home} />
           <div>
