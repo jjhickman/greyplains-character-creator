@@ -1,0 +1,19 @@
+{
+  "player": "Josh",
+  "name": "Dildo Daggins",
+  "levels": {
+    "class": 0,
+    "archetype": 0,
+    "flavor": 0
+  },
+  "species": "Halfling",
+  "abilities": {
+    "power": 0,
+    "agility": 0,
+    "coordination": 0,
+    "awareness": 0,
+    "intellect": 0,
+    "presence": 0,
+    "luck": 0
+  }
+}

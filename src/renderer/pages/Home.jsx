@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { Link } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
@@ -12,15 +11,11 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
+import PropTypes from 'prop-types';
+
 import sidebar from '../Greyplains_Sidebar.jpg';
 
-const Home = () => {
-  const [module, setModule] = React.useState('');
-
-  const handleModuleChange = (event) => {
-    setModule(event.target.value);
-  };
-
+const Home = ({ module, handleModuleChange }) => {
   return (
     <div>
       <Box sx={{ width: '100%' }}>
@@ -38,8 +33,8 @@ const Home = () => {
                 <MenuItem value="Original">Original</MenuItem>
               </Select>
             </FormControl>
-            <hr/>
-            <Link to="/character">
+            <hr />
+            <Link to="/basics">
               <Button variant="contained" style={{ backgroundColor: '#111' }}>
                 Start
               </Button>
@@ -52,6 +47,16 @@ const Home = () => {
       </Box>
     </div>
   );
+};
+
+Home.propTypes = {
+  module: PropTypes.string,
+  handleModuleChange: PropTypes.func,
+};
+
+Home.defaultProps = {
+  module: 'original',
+  handleModuleChange: console.log('Helllo'),
 };
 
 export default Home;
