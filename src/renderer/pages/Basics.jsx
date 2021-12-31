@@ -14,11 +14,12 @@ const Basics = () => {
   const [totalLevel, setTotalLevel] = React.useState('');
   const [species, setSpecies] = React.useState('');
   const [archetype, setArchetype] = React.useState('');
-  const [archetypeLevel, setArchetypeLevel] = React.useState('');
+  const [archetypeLevel, setArchetypeLevel] = React.useState(0);
   const [classs, setClass] = React.useState('');
-  const [classLevel, setClassLevel] = React.useState('');
+  const [classLevel, setClassLevel] = React.useState(0);
   const [flavor, setFlavor] = React.useState('');
-  const [flavorLevel, setFlavorLevel] = React.useState('');
+  const [flavorLevel, setFlavorLevel] = React.useState(0);
+  const [generationMethod, setGenerationMethod] = React.useState(0);
 
   const handleSpeciesChange = (event) => {
     setSpecies(event.target.value);
@@ -48,10 +49,14 @@ const Basics = () => {
     setFlavorLevel(event.target.value);
   };
 
+  const handleGenerationMethodChange = (event) => {
+    setGenerationMethod(event.target.value);
+  };
+
   return (
     <div>
       <h2>Basics</h2>
-      <Box sx={{ minWidth: 275 }}>
+      <Box xs={{ minWidth: 275 }}>
         <Card variant="outlined">
           <CardContent>
             <Grid
@@ -69,6 +74,7 @@ const Basics = () => {
                       labelId="demo-simple-select-label"
                       id="demo-simple-select"
                       value={species}
+                      size="small"
                       label="Species"
                       onChange={handleSpeciesChange}
                     >
@@ -87,6 +93,21 @@ const Basics = () => {
                   &nbsp;
                   <hr />
                   &nbsp;
+                  <h4>Ability Scores:</h4>
+                  <InputLabel>Power</InputLabel>
+                  <TextField size="small">{0}</TextField>
+                  <InputLabel>Agility</InputLabel>
+                  <TextField size="small">{0}</TextField>
+                  <InputLabel>Coordination</InputLabel>
+                  <TextField size="small">{0}</TextField>
+                  <InputLabel>Awareness</InputLabel>
+                  <TextField size="small">{0}</TextField>
+                  <InputLabel>Intellect</InputLabel>
+                  <TextField size="small">{0}</TextField>
+                  <InputLabel>Presence</InputLabel>
+                  <TextField size="small">{0}</TextField>
+                  <InputLabel>Luck</InputLabel>
+                  <TextField size="small">{0}</TextField>
                 </div>
               </Grid>
               <Grid item xs={6}>
@@ -98,6 +119,7 @@ const Basics = () => {
                       id="demo-simple-select"
                       value={classs}
                       label="Class"
+                      size="small"
                       onChange={handleClassChange}
                     >
                       <MenuItem value="Warrior">Warrior</MenuItem>
@@ -111,6 +133,7 @@ const Basics = () => {
                       id="demo-simple-select"
                       value={classLevel}
                       label="Level"
+                      size="small"
                       onChange={handleClassLevelChange}
                     >
                       <MenuItem value={0}>0</MenuItem>
@@ -137,6 +160,7 @@ const Basics = () => {
                     id="demo-simple-select"
                     value={archetype}
                     label="Archetype"
+                    size="small"
                     onChange={handleArchetypeChange}
                   >
                     <MenuItem value="Soldier">Soldier</MenuItem>
@@ -150,6 +174,7 @@ const Basics = () => {
                     id="demo-simple-select"
                     value={archetypeLevel}
                     label="Level"
+                    size="small"
                     onChange={handleArchetypeLevelChange}
                   >
                     <MenuItem value={0}>0</MenuItem>
@@ -170,6 +195,7 @@ const Basics = () => {
                     id="demo-simple-select"
                     value={flavor}
                     label="Flavor"
+                    size="small"
                     onChange={handleFlavorChange}
                   >
                     <MenuItem value="Expert">Expert (Universal)</MenuItem>
@@ -186,7 +212,27 @@ const Basics = () => {
                     id="demo-simple-select"
                     value={flavorLevel}
                     label="Level"
+                    size="small"
                     onChange={handleFlavorLevelChange}
+                  >
+                    <MenuItem value={0}>0</MenuItem>
+                    <MenuItem value={1}>1</MenuItem>
+                    <MenuItem value={2}>2</MenuItem>
+                    <MenuItem value={3}>3</MenuItem>
+                  </Select>
+                </FormControl>
+                &nbsp;
+                <hr />
+                &nbsp;
+                <FormControl fullWidth>
+                  <InputLabel id="demo-simple-select-label">
+                    Generation Method
+                  </InputLabel>
+                  <Select
+                    value={flavorLevel}
+                    label="Generation Method"
+                    size="small"
+                    onChange={handleGenerationMethodChange}
                   >
                     <MenuItem value={0}>0</MenuItem>
                     <MenuItem value={1}>1</MenuItem>

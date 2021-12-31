@@ -74,7 +74,7 @@ const App = () => {
             <Navbar />
             <Route
               path="/results"
-              render={() => <Results module={module} character={character} />}
+              render={() => <Results character={character} />}
             />
           </div>
         </Switch>
